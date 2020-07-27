@@ -18,7 +18,7 @@ class TasksController < ApplicationController
       flash[:success] = 'Task が正常に設定されました'
       redirect_to @task
     else
-      flash.now[:danger] = 'task が設定されませんでした'
+      flash.now[:danger] = 'Task が設定されませんでした'
       render :new
     end
   end
@@ -43,10 +43,12 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
 
-    flash[:success] = ' は正常に削除されました'
+    flash[:success] = 'Taskは正常に削除されました'
     redirect_to tasks_url
   end
 end
+
+private
 
 # Strong Parameter
   def task_params
