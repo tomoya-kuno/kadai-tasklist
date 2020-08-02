@@ -4,7 +4,8 @@
   <% if task.errors.any? %>
     <div id="error_explanation">
       <ul>
-        <% task.errors.full_tasks.each do |msg| %>
+        <% task.errors.full_messages.each do |msg| %>
+        <!--full_messagesで全ての属性に関するエラーメッセージを取得できる-->
           <li><%= msg %></li>
         <% end %>
       </ul>
