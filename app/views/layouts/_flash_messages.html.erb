@@ -1,6 +1,6 @@
 <!--flash_messagesはアクション実行後に簡単なメッセージを表示させるrailsの機能-->
 <!--flash_tasksではない-->
 <% flash.each do |message_type, message| %>
-  <!--task_type内には:successが代入される-->
+  <!--message_type内には:successが代入される-->
   <div><%= message %></div>
 <% end %>
