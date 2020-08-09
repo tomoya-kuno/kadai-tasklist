@@ -2,9 +2,15 @@
   <div class="text-center">
     <h1>ようこそ、タスク一覧へ</h1>
     <h2>welcom to the tasklist!</h2>
-    <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    <% if logged_in? %>
+      <p>ログイン完了ユーザ: <%= current_user.name %></p>
+    <% else %>
+      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+    <% end %>
   </div>
 </div>
+
+<% if logged_in? %>
 
 <ul>
   <% @tasks.each do |task| %>
@@ -13,3 +19,8 @@
 </ul>
 
 <%= link_to '新規タスクの投稿', new_task_path %>
+
+<% else %>
+  <p>...ログインしていないのでタスク一覧を見ることはできません</p>
+
+<% end %>
