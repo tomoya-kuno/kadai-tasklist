@@ -2,5 +2,5 @@
 <!--flash_tasksではない-->
 <% flash.each do |message_type, message| %>
   <!--message_type内には:successが代入される-->
-  <div><%= message %></div>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
