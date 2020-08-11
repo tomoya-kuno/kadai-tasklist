@@ -1,16 +1,6 @@
 <%= form_with(model: task, local: true) do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
   <!-- @taskをtaskに変更している -->
-
-  <% if task.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% task.errors.full_messages.each do |msg| %>
-        <!--full_messagesで全ての属性に関するエラーメッセージを取得できる-->
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
   
   <%= f.label :content, 'タスク' %>
   <%= f.text_field :content %>
